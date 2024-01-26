@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+
+.card-summary,
+.card,
+.card__image,
+.card__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-summary {
+	gap: func.em(8, var.$font-size-primary);
+	text-align: center;
+}
+
+.card__image img {
+	width: 100%;
+	height: auto;
+}
+
+@media (min-width: 48em) {
+}
