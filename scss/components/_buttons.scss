@@ -17,9 +17,15 @@
 	justify-content: center;
 	padding: func.em(10) func.em(24);
 	background-color: var.$color-blue;
+	border-color: var.$color-blue;
 	border-radius: 22px;
-	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-	color: white;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+	color: var.$color-white;
+}
+
+.btn--primary:hover {
+	background-color: var.$color-blue-dark;
+	border-color: var.$color-blue-dark;
 }
 
 .btn--link {
@@ -27,5 +33,5 @@
 }
 
 .btn--link:hover {
-	color: var.$color-blue-dark;
+	color: var.$color-blue-darker;
 }
