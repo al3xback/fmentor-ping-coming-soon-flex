@@ -1,6 +1,6 @@
 const formEl = document.querySelector('.form');
 const emailInputEl = document.querySelector('.form__control--email');
-const errorMsgEl = document.querySelector('.error-message');
+const emailErrorMsgEl = emailInputEl.nextElementSibling;
 
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
@@ -9,23 +9,36 @@ const validateEmail = () => {
 	const isEmailEmpty = enteredEmail.length === 0;
 	const isEmailValid = emailRegex.test(enteredEmail);
 
+	let error = null;
+
 	if (isEmailEmpty) {
-		errorMsgEl.textContent =
-			'Whoops! It looks like you forgot to add your email';
+		error = {
+			message: 'Whoops! It looks like you forgot to add your email',
+		};
+		emailErrorMsgEl.textContent = error.message;
 		emailInputEl.classList.add('invalid');
 	} else if (!isEmailValid) {
-		errorMsgEl.textContent = 'Please provide a valid email address';
+		error = {
+			message: 'Please provide a valid email address',
+		};
+		emailErrorMsgEl.textContent = error.message;
 		emailInputEl.classList.add('invalid');
 	} else {
-		errorMsgEl.textContent = '';
+		emailErrorMsgEl.textContent = '';
 		emailInputEl.classList.remove('invalid');
 	}
+
+	return !!error;
 };
 
 formEl.addEventListener('submit', (event) => {
 	event.preventDefault();
 
-	validateEmail();
+	const isEmailError = validateEmail();
+
+	if (!isEmailError) {
+		alert('Subscribed!');
+	}
 });
 
 emailInputEl.addEventListener('input', () => {

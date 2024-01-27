@@ -28,7 +28,7 @@
 	border-color: var.$color-light-red;
 }
 
-.error-message {
+.form__error-message {
 	padding: 0 func.em(24, var.$font-size-primary);
 	margin: func.em(6, var.$font-size-primary) 0
 		func.em(12, var.$font-size-primary);
@@ -47,7 +47,7 @@
 		flex-grow: 1;
 	}
 
-	.error-message {
+	.form__error-message {
 		position: absolute;
 		left: 0;
 		top: 100%;
