@@ -10,11 +10,21 @@
 }
 
 .card-summary {
-	gap: func.em(8, var.$font-size-primary);
+	gap: func.em(16, var.$font-size-primary);
 	text-align: center;
+}
+
+.card-summary__title .light {
+	color: var.$color-gray;
 }
 
 .card__image img {
 	width: 100%;
 	height: auto;
+}
+
+@media (min-width: 37.5em) {
+	.card-summary__title {
+		font-size: func.em(27, var.$font-size-primary);
+	}
 }
