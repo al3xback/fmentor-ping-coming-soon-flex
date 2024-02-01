@@ -24,7 +24,7 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- Display flex approach
+- Display flex
 - Mobile-first workflow
 
 ## Author
