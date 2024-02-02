@@ -37,3 +37,9 @@
 	display: flex;
 	gap: func.em(16);
 }
+
+@media (min-width: 48em) {
+	.footer__content {
+		gap: func.em(30, var.$font-size-primary);
+	}
+}
